@@ -12,4 +12,5 @@ AI Assignment
 3. extract the "bs4.zip" and copy the "bs4" folder to the Python Lib Directory, e.g. C:\Python27\Lib
 
 # Running #
-From the Python IDLE, click File -> Open -> search.py
+1. From the Python IDLE, click File -> Open -> search.py
+2. Then when you open "search.py", click on Run -> Run Module or just press F5
