@@ -8,8 +8,6 @@ urls = [url]
 visited = [url]
 
 def crawler():
-    for url in urls:
-        print "Crawling: " + url
         try:
             htmltext = urllib.urlopen(urls[0]).read()
         except:
@@ -24,13 +22,13 @@ def crawler():
             urls.append(tag['href'])
             print tag['href']
         
-def start():
+def crawl2():
     while len(urls) >0:
         try:
             htmltext = urllib.urlopen(urls[0]).read()
         except:
                 print urls[0]
-        soup = BeautifulSoup(htmltext)
+        soup = BeautifulSoup(htmltext, "html.parser")
 
         urls.pop(0)
         visited.append(url)
@@ -39,6 +37,6 @@ def start():
             tag['href'] = urlparse.urljoin(url,tag['href'])
             urls.append(tag['href'])
             print tag['href']
-start()
+crawl2()
 while 1:
     crawler()
